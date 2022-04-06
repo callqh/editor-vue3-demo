@@ -301,7 +301,7 @@
 
 "@wangeditor/editor-for-vue@^5.1.8":
   version "5.1.8"
-  resolved "https://registry.npmmirror.com/@wangeditor/editor-for-vue/-/editor-for-vue-5.1.8.tgz#69d2072e961027aa5d8b9ef25a4bdc5be910589d"
+  resolved "https://registry.yarnpkg.com/@wangeditor/editor-for-vue/-/editor-for-vue-5.1.8.tgz#69d2072e961027aa5d8b9ef25a4bdc5be910589d"
   integrity sha512-mPI3pxxr71nLbFmoHP9qa4dUwQzIsXge2QSkkLedZtBaENJpODZf/VR+gcryqGqnJVBRl8wxboi7s7MPeCnuYw==
   dependencies:
     eventemitter3 "^4.0.7"

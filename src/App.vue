@@ -20,11 +20,7 @@ const changeType = (type: "base" | "vmodel") => {
       <button @click="changeType('vmodel')">V-Model Editor</button>
     </div>
     <div>
-      <Editor
-        v-if="editorType === 'base'"
-        v-for="item in [1, 2, 3, 4]"
-        :key="item"
-      />
+      <Editor v-if="editorType === 'base'" />
       <VModel v-if="editorType === 'vmodel'" />
     </div>
   </div>

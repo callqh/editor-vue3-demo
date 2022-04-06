@@ -3,7 +3,7 @@
     <textarea v-model="valueHtml" style="width: 100%; height: 150px"></textarea>
   </div>
   <div style="border: 1px solid #ccc; margin-top: 20px">
-    <Toolbar :editor="editorRef" style="border-bottom: 1px solid #ccc" />
+    <Toolbar :editorId="editorId" style="border-bottom: 1px solid #ccc" />
     <Editor
       :editorId="editorId"
       :defaultConfig="editorConfig"
@@ -22,7 +22,12 @@ import {
   onMounted,
   shallowRef,
 } from "vue";
-import { Editor, Toolbar } from "@wangeditor/editor-for-vue3";
+import {
+  Editor,
+  getEditor,
+  removeEditor,
+  Toolbar,
+} from "@wangeditor/editor-for-vue";
 import "@wangeditor/editor/dist/css/style.css";
 import { IDomEditor } from "@wangeditor/editor";
 
@@ -56,9 +61,11 @@ export default defineComponent({
 
     // 组件销毁时，也及时销毁编辑器
     onBeforeUnmount(() => {
-      const editor = editorRef.value;
+      // const editor = editorRef.value;
+      const editor = getEditor(editorId);
       if (editor == null) return;
       editor.destroy();
+      removeEditor(editorId);
     });
 
     return {
