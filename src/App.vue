@@ -1,15 +1,14 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import Editor from './components/Editor.vue';
-import VModel from './components/VModel.vue';
+import { ref } from "vue";
+import Editor from "./components/Editor.vue";
+import VModel from "./components/VModel.vue";
 
-const editorType = ref<'base' | 'vmodel'>('base');
-
+const editorType = ref<"base" | "vmodel">("base");
 /**
  * 切换编辑器类型
  * @param type base | vmodel
  */
-const changeType = (type: 'base' | 'vmodel') => {
+const changeType = (type: "base" | "vmodel") => {
   editorType.value = type;
 };
 </script>
@@ -21,7 +20,11 @@ const changeType = (type: 'base' | 'vmodel') => {
       <button @click="changeType('vmodel')">V-Model Editor</button>
     </div>
     <div>
-      <Editor v-if="editorType === 'base'" />
+      <Editor
+        v-if="editorType === 'base'"
+        v-for="item in [1, 2, 3, 4]"
+        :key="item"
+      />
       <VModel v-if="editorType === 'vmodel'" />
     </div>
   </div>
