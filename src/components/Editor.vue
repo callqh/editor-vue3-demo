@@ -52,6 +52,7 @@ export default defineComponent({
     const handleCreated = (editor: IDomEditor) => {
       console.log("created", editor);
       editorRef.value = editor; // 记录 editor 实例
+      // editor.disable();
     };
     // 组件销毁时，也及时销毁编辑器
     onBeforeUnmount(() => {
